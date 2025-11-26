@@ -14,7 +14,201 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      faq_items: {
+        Row: {
+          answer: string
+          category: string
+          created_at: string
+          id: string
+          question: string
+          sort_order: number | null
+        }
+        Insert: {
+          answer: string
+          category: string
+          created_at?: string
+          id?: string
+          question: string
+          sort_order?: number | null
+        }
+        Update: {
+          answer?: string
+          category?: string
+          created_at?: string
+          id?: string
+          question?: string
+          sort_order?: number | null
+        }
+        Relationships: []
+      }
+      gallery_images: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          image_url: string
+          show_on_home: boolean | null
+          title: string | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url: string
+          show_on_home?: boolean | null
+          title?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string
+          show_on_home?: boolean | null
+          title?: string | null
+        }
+        Relationships: []
+      }
+      quick_enquiries: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+          message: string | null
+          name: string
+          phone: string
+          source_page: string | null
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          message?: string | null
+          name: string
+          phone: string
+          source_page?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          message?: string | null
+          name?: string
+          phone?: string
+          source_page?: string | null
+        }
+        Relationships: []
+      }
+      service_areas: {
+        Row: {
+          area_name: string
+          city: string
+          created_at: string
+          id: string
+          is_active: boolean | null
+        }
+        Insert: {
+          area_name: string
+          city: string
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+        }
+        Update: {
+          area_name?: string
+          city?: string
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+        }
+        Relationships: []
+      }
+      service_bookings: {
+        Row: {
+          ac_type: string
+          address: string
+          city: string
+          created_at: string
+          email: string | null
+          id: string
+          name: string
+          notes: string | null
+          phone: string
+          pincode: string | null
+          preferred_contact_mode: string | null
+          preferred_date: string | null
+          preferred_time_slot: string | null
+          service_type: string
+          status: string | null
+          units: number | null
+        }
+        Insert: {
+          ac_type: string
+          address: string
+          city: string
+          created_at?: string
+          email?: string | null
+          id?: string
+          name: string
+          notes?: string | null
+          phone: string
+          pincode?: string | null
+          preferred_contact_mode?: string | null
+          preferred_date?: string | null
+          preferred_time_slot?: string | null
+          service_type: string
+          status?: string | null
+          units?: number | null
+        }
+        Update: {
+          ac_type?: string
+          address?: string
+          city?: string
+          created_at?: string
+          email?: string | null
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string
+          pincode?: string | null
+          preferred_contact_mode?: string | null
+          preferred_date?: string | null
+          preferred_time_slot?: string | null
+          service_type?: string
+          status?: string | null
+          units?: number | null
+        }
+        Relationships: []
+      }
+      testimonials: {
+        Row: {
+          city: string | null
+          created_at: string
+          id: string
+          name: string
+          rating: number
+          review_text: string
+          show_on_home: boolean | null
+        }
+        Insert: {
+          city?: string | null
+          created_at?: string
+          id?: string
+          name: string
+          rating: number
+          review_text: string
+          show_on_home?: boolean | null
+        }
+        Update: {
+          city?: string | null
+          created_at?: string
+          id?: string
+          name?: string
+          rating?: number
+          review_text?: string
+          show_on_home?: boolean | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
