@@ -32,7 +32,7 @@ export const Navbar = () => {
     <nav className="sticky top-0 z-40 bg-card border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="text-xl font-bold text-primary hover:text-primary/80 transition-colors">
+          <Link to="/" className="text-xl font-bold text-primary hover:text-primary/80 transition-colors whitespace-nowrap">
             {CONTACT_INFO.companyName}
           </Link>
 
@@ -42,7 +42,7 @@ export const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap"
               >
                 {link.name}
               </Link>
@@ -50,12 +50,12 @@ export const Navbar = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
-            <Button onClick={handleCall} variant="outline" size="sm" className="gap-2">
+          <div className="hidden md:flex items-center space-x-3 whitespace-nowrap">
+            <Button onClick={handleCall} variant="outline" size="sm" className="gap-2 whitespace-nowrap">
               <Phone className="w-4 h-4" />
               Call Now
             </Button>
-            <Button onClick={handleWhatsApp} size="sm" className="gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white">
+            <Button onClick={handleWhatsApp} size="sm" className="gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white whitespace-nowrap">
               <MessageCircle className="w-4 h-4" />
               WhatsApp
             </Button>
