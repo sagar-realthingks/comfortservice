@@ -1,7 +1,7 @@
 export const CONTACT_INFO = {
   companyName: "Comfort Technical Service",
-  phone: "+91 9876543210", // Update with actual number
-  whatsapp: "+919876543210", // Update with actual number (no spaces or dashes)
+  phone: "+91 77450 46520",
+  whatsapp: "917745046520", // No spaces or dashes for WhatsApp API
   email: "contact@comforttechnical.com",
   address: "COMFORT TECHNICAL SERVICES, NIKHIL NIWAS, SURVEY NO.179, SHOP NO-02, FIRST FLOOR, NEAR GA, Pune, PIMPRI CHINCHWAD, MH 411035",
   workingHours: "Mon - Sat: 8:00 AM - 8:00 PM | Sun: 9:00 AM - 6:00 PM",
