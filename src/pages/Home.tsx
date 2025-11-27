@@ -6,8 +6,6 @@ import { TestimonialCard } from "@/components/TestimonialCard";
 import { CONTACT_INFO, SERVICES } from "@/config/contact";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
-import acBrands from "@/assets/ac-brands.png";
-import acUnit from "@/assets/ac-unit.png";
 const Home = () => {
   const handleCall = () => {
     window.location.href = `tel:${CONTACT_INFO.phone}`;
@@ -33,38 +31,25 @@ const Home = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 via-background to-accent/5 py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="text-center lg:text-left animate-fade-in">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Fast, Reliable AC Service in Pune & PCMC
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-6">
-                Same-day service • Experienced technicians • Transparent pricing • Service warranty
-              </p>
-              <p className="text-sm text-muted-foreground mb-8">
-                We service all types: Split AC, Window AC, Commercial AC, Ductable AC, VRV & more
-              </p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                <Button asChild size="lg" className="gap-2">
-                  <Link to="/contact">Book Service</Link>
-                </Button>
-                <Button onClick={handleCall} variant="outline" size="lg" className="gap-2">
-                  <Phone className="w-5 h-5" />
-                  Call Now
-                </Button>
-                <Button onClick={handleWhatsApp} size="lg" className="gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white">
-                  <MessageCircle className="w-5 h-5" />
-                  WhatsApp Us
-                </Button>
-              </div>
-            </div>
-            <div className="hidden lg:block animate-fade-in">
-              <img 
-                src={acBrands} 
-                alt="AC brands we service - Daikin, Hitachi, LG and more" 
-                className="w-full max-w-md mx-auto rounded-lg"
-                loading="lazy"
-              />
+          <div className="text-center max-w-3xl mx-auto animate-fade-in">
+            <h1 className="text-4xl font-bold mb-4 text-foreground md:text-4xl">
+              Fast, Reliable AC Service in Pune & PCMC
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8">
+              Same-day service • Experienced technicians • Transparent pricing • Service warranty
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button asChild size="lg" className="gap-2">
+                <Link to="/contact">Book Service</Link>
+              </Button>
+              <Button onClick={handleCall} variant="outline" size="lg" className="gap-2">
+                <Phone className="w-5 h-5" />
+                Call Now
+              </Button>
+              <Button onClick={handleWhatsApp} size="lg" className="gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white">
+                <MessageCircle className="w-5 h-5" />
+                WhatsApp Us
+              </Button>
             </div>
           </div>
         </div>
@@ -90,47 +75,41 @@ const Home = () => {
       {/* Why Choose Us */}
       <section className="py-16 bg-accent/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-            <div className="hidden lg:block">
-              <img 
-                src={acUnit} 
-                alt="Professional AC unit servicing" 
-                className="w-full max-w-sm mx-auto rounded-lg"
-                loading="lazy"
-              />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold mb-8 text-center lg:text-left">Why Comfort Technical Services</h2>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center animate-slide-up">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Users className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold mb-1 text-sm">Experienced Team</h3>
-                  <p className="text-xs text-muted-foreground">All AC types covered</p>
-                </div>
-                <div className="text-center animate-slide-up" style={{ animationDelay: "0.1s" }}>
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Clock className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold mb-1 text-sm">On-Time Service</h3>
-                  <p className="text-xs text-muted-foreground">Same-day available</p>
-                </div>
-                <div className="text-center animate-slide-up" style={{ animationDelay: "0.2s" }}>
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <CheckCircle className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold mb-1 text-sm">Transparent Pricing</h3>
-                  <p className="text-xs text-muted-foreground">No hidden charges</p>
-                </div>
-                <div className="text-center animate-slide-up" style={{ animationDelay: "0.3s" }}>
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Shield className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold mb-1 text-sm">Service Warranty</h3>
-                  <p className="text-xs text-muted-foreground">Quality guaranteed</p>
-                </div>
+          <h2 className="text-3xl font-bold text-center mb-12">Why Comfort Technical Service</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center animate-slide-up">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-primary" />
               </div>
+              <h3 className="font-semibold mb-2">Experienced Team</h3>
+              <p className="text-sm text-muted-foreground">{CONTACT_INFO.experienceText}</p>
+            </div>
+            <div className="text-center animate-slide-up" style={{
+            animationDelay: "0.1s"
+          }}>
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-semibold mb-2">On-Time Service</h3>
+              <p className="text-sm text-muted-foreground">Same-day and next-day appointments available</p>
+            </div>
+            <div className="text-center animate-slide-up" style={{
+            animationDelay: "0.2s"
+          }}>
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-semibold mb-2">Transparent Pricing</h3>
+              <p className="text-sm text-muted-foreground">Clear quotes before work, no hidden charges</p>
+            </div>
+            <div className="text-center animate-slide-up" style={{
+            animationDelay: "0.3s"
+          }}>
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-semibold mb-2">Service Warranty</h3>
+              <p className="text-sm text-muted-foreground">Quality guaranteed with service warranty</p>
             </div>
           </div>
         </div>
