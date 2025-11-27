@@ -1,4 +1,4 @@
-import { Users, Award, Clock, ThumbsUp } from "lucide-react";
+import { Users, Award, Clock, ThumbsUp, Building2, FileText, Shield } from "lucide-react";
 import { CONTACT_INFO } from "@/config/contact";
 
 const About = () => {
@@ -13,11 +13,14 @@ const About = () => {
     <div className="min-h-screen py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-12 animate-fade-in">
           <h1 className="text-4xl font-bold mb-4">About {CONTACT_INFO.companyName}</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Your trusted partner for professional air conditioning services in Pune & PCMC
           </p>
+          {CONTACT_INFO.ownerName && (
+            <p className="text-muted-foreground mt-2">Proprietor: <span className="font-semibold text-foreground">{CONTACT_INFO.ownerName}</span></p>
+          )}
         </div>
 
         {/* Story */}
@@ -95,13 +98,35 @@ const About = () => {
           </div>
         </div>
 
-        {/* Team (Optional placeholder) */}
-        <div className="bg-accent/5 rounded-lg p-8 text-center animate-fade-in">
+        {/* Team */}
+        <div className="bg-accent/5 rounded-lg p-8 text-center mb-16 animate-fade-in">
           <h2 className="text-2xl font-bold mb-4">Expert Technicians</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Our team consists of certified and experienced AC technicians who undergo regular training
             to stay updated with the latest technologies and best practices in the industry.
           </p>
+        </div>
+
+        {/* Business Registration */}
+        <div className="animate-fade-in">
+          <h2 className="text-3xl font-bold text-center mb-8">Registered & Verified Business</h2>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="bg-card border border-border rounded-lg p-6 text-center">
+              <Building2 className="w-10 h-10 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold mb-2">GSTIN Registered</h3>
+              <p className="text-sm text-muted-foreground font-mono">{CONTACT_INFO.gstin}</p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-6 text-center">
+              <FileText className="w-10 h-10 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold mb-2">PAN Verified</h3>
+              <p className="text-sm text-muted-foreground font-mono">{CONTACT_INFO.pan}</p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-6 text-center">
+              <Shield className="w-10 h-10 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold mb-2">GST Invoices</h3>
+              <p className="text-sm text-muted-foreground">Proper GST invoices provided for all services</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

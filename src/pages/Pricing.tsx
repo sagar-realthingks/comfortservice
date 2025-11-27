@@ -84,16 +84,30 @@ const Pricing = () => {
           ))}
         </div>
 
-        <div className="mt-12 bg-accent/5 rounded-lg p-8 animate-fade-in">
-          <h2 className="text-2xl font-bold mb-4">Pricing Notes</h2>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>• Prices may vary based on AC condition, location, and accessibility</li>
-            <li>• Parts and materials are charged separately if needed</li>
-            <li>• Free inspection for all services</li>
-            <li>• No work done without your approval</li>
-            <li>• All services include warranty</li>
-            <li>• AMC customers get priority support and discounted rates</li>
-          </ul>
+        <div className="mt-12 grid md:grid-cols-2 gap-8">
+          <div className="bg-accent/5 rounded-lg p-8 animate-fade-in">
+            <h2 className="text-2xl font-bold mb-4">Pricing Notes</h2>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• Prices may vary based on AC condition, location, and accessibility</li>
+              <li>• Parts and materials are charged separately if needed</li>
+              <li>• Free inspection for all services</li>
+              <li>• No work done without your approval</li>
+              <li>• All services include warranty</li>
+              <li>• AMC customers get priority support and discounted rates</li>
+            </ul>
+          </div>
+          <div className="bg-primary/5 border border-primary/20 rounded-lg p-8 animate-fade-in">
+            <h2 className="text-2xl font-bold mb-4 text-primary">GST Invoice Available</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              We are a GST registered business and provide proper GST invoices for all services.
+            </p>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• Official GST invoices for all transactions</li>
+              <li>• Claim input tax credit on business expenses</li>
+              <li>• Proper documentation for corporate clients</li>
+              <li>• GSTIN: <span className="font-mono text-foreground">{CONTACT_INFO.gstin}</span></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
