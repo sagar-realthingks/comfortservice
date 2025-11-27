@@ -23,6 +23,9 @@ export const Footer = () => {
                 <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
                 <span className="opacity-90">{CONTACT_INFO.address}</span>
               </div>
+              {CONTACT_INFO.gstin && (
+                <p className="opacity-75 text-xs">GSTIN: {CONTACT_INFO.gstin}</p>
+              )}
             </div>
           </div>
 
