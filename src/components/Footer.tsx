@@ -50,6 +50,12 @@ export const Footer = () => {
                 <Phone className="w-4 h-4" />
                 {CONTACT_INFO.phone}
               </a>
+              {CONTACT_INFO.phone2 && (
+                <a href={`tel:${CONTACT_INFO.phone2}`} className="flex items-center gap-2 hover:text-primary transition-colors">
+                  <Phone className="w-4 h-4" />
+                  {CONTACT_INFO.phone2}
+                </a>
+              )}
               <button onClick={handleWhatsApp} className="flex items-center gap-2 hover:text-primary transition-colors">
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp Us
