@@ -13,12 +13,34 @@ export const Navbar = () => {
     const message = encodeURIComponent("Hello! I would like to know more about your AC services.");
     window.open(`https://wa.me/${CONTACT_INFO.whatsapp}?text=${message}`, "_blank");
   };
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" }
-  ];
+  const navLinks = [{
+    name: "Home",
+    path: "/"
+  }, {
+    name: "Services",
+    path: "/services"
+  }, {
+    name: "Pricing",
+    path: "/pricing"
+  }, {
+    name: "AMC Plans",
+    path: "/amc"
+  }, {
+    name: "Service Areas",
+    path: "/service-areas"
+  }, {
+    name: "About",
+    path: "/about"
+  }, {
+    name: "FAQs",
+    path: "/faqs"
+  }, {
+    name: "Gallery",
+    path: "/gallery"
+  }, {
+    name: "Contact",
+    path: "/contact"
+  }];
   return <nav className="sticky top-0 z-40 bg-card border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
         <div className="flex justify-between items-center h-12">
