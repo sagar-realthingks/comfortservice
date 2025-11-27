@@ -49,7 +49,7 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-0.5">
-            {navLinks.map(link => <Link key={link.path} to={link.path} className="px-2 py-1.5 font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap text-base">
+            {navLinks.map(link => <Link key={link.path} to={link.path} className="px-2 py-1.5 font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap text-base font-serif">
                 {link.name}
               </Link>)}
           </div>
