@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Phone, MessageCircle, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT_INFO } from "@/config/contact";
+import logo from "@/assets/logo.png";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleCall = () => {
@@ -43,8 +44,8 @@ export const Navbar = () => {
   return <nav className="sticky top-0 z-40 bg-card border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
         <div className="flex justify-between items-center h-12">
-          <Link to="/" className="text-lg font-bold text-primary hover:text-primary/80 transition-colors whitespace-nowrap">
-            {CONTACT_INFO.companyName}
+          <Link to="/" className="hover:opacity-80 transition-opacity">
+            <img src={logo} alt={CONTACT_INFO.companyName} className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
