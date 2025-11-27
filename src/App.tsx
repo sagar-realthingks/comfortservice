@@ -8,12 +8,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
-import Pricing from "./pages/Pricing";
-import AMC from "./pages/AMC";
-import ServiceAreas from "./pages/ServiceAreas";
 import About from "./pages/About";
-import FAQs from "./pages/FAQs";
-import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -31,12 +26,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/amc" element={<AMC />} />
-              <Route path="/service-areas" element={<ServiceAreas />} />
               <Route path="/about" element={<About />} />
-              <Route path="/faqs" element={<FAQs />} />
-              <Route path="/gallery" element={<Gallery />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
