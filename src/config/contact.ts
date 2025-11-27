@@ -11,7 +11,7 @@ export const CONTACT_INFO = {
   workingHours: "Open 24 Hours",
   establishedYear: 2018,
   experienceText: "Serving Pune since 2018 with 7+ years of experience",
-  googleMapsUrl: "https://maps.google.com/?q=Comfort+Technical+Services+Akurdi+Pune",
+  googleMapsUrl: "https://share.google/XJivVac422OwnkpZo",
   googleRating: 5.0,
   googleReviews: 57
 };
