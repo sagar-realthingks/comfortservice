@@ -170,7 +170,7 @@ const Home = () => {
             <Button asChild size="lg" variant="secondary">
               <Link to="/contact">Book Now</Link>
             </Button>
-            <Button onClick={handleWhatsApp} size="lg" variant="outline" className="gap-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+            <Button onClick={handleWhatsApp} size="lg" className="gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white border-0">
               <MessageCircle className="w-5 h-5" />
               Contact on WhatsApp
             </Button>
