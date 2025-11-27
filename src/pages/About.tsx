@@ -3,10 +3,10 @@ import { CONTACT_INFO } from "@/config/contact";
 
 const About = () => {
   const stats = [
-    { icon: Award, label: "Years Experience", value: "5+" },
+    { icon: Award, label: "Years Experience", value: "7+" },
     { icon: Users, label: "AC Units Serviced", value: "10,000+" },
-    { icon: ThumbsUp, label: "Corporate Clients", value: "50+" },
-    { icon: Clock, label: "Average Rating", value: "4.8/5" }
+    { icon: ThumbsUp, label: "Google Reviews", value: "57" },
+    { icon: Clock, label: "Google Rating", value: "5.0/5" }
   ];
 
   return (

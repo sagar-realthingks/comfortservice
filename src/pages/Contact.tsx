@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Clock, Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -121,9 +121,14 @@ const Contact = () => {
                   <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                   <div>
                     <p className="font-medium mb-1">Phone</p>
-                    <a href={`tel:${CONTACT_INFO.phone}`} className="text-sm text-primary hover:underline">
+                    <a href={`tel:${CONTACT_INFO.phone}`} className="text-sm text-primary hover:underline block">
                       {CONTACT_INFO.phone}
                     </a>
+                    {CONTACT_INFO.phone2 && (
+                      <a href={`tel:${CONTACT_INFO.phone2}`} className="text-sm text-primary hover:underline block">
+                        {CONTACT_INFO.phone2}
+                      </a>
+                    )}
                   </div>
                 </div>
 
@@ -152,6 +157,25 @@ const Contact = () => {
                   <div>
                     <p className="font-medium mb-1">Working Hours</p>
                     <p className="text-sm text-muted-foreground">{CONTACT_INFO.workingHours}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 pt-2 border-t border-border">
+                  <Star className="w-5 h-5 text-yellow-500 flex-shrink-0 fill-yellow-500" />
+                  <div>
+                    <p className="font-medium mb-1">Google Rating</p>
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-semibold">{CONTACT_INFO.googleRating}/5</span>
+                      <span className="text-sm text-muted-foreground">({CONTACT_INFO.googleReviews} reviews)</span>
+                      <a 
+                        href={CONTACT_INFO.googleMapsUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline inline-flex items-center gap-1 text-sm"
+                      >
+                        View <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </CardContent>
