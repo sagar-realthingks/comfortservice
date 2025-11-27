@@ -1,11 +1,12 @@
 export const CONTACT_INFO = {
-  companyName: "Comfort Technical Service",
+  companyName: "Comfort Technical Services",
   phone: "+91 77450 46520",
+  phone2: "+91 82083 46628",
   whatsapp: "917745046520", // No spaces or dashes for WhatsApp API
-  email: "contact@comforttechnical.com",
-  address: "COMFORT TECHNICAL SERVICES, NIKHIL NIWAS, SURVEY NO.179, SHOP NO-02, FIRST FLOOR, NEAR GA, Pune, PIMPRI CHINCHWAD, MH 411035",
+  email: "comforttechnicalservice8@gmail.com",
+  address: "Sr. No. 179/02, Flat No. 03, Nikhil Niwas, Panchatara Nagar, Akurdi, Pune - 411035",
   workingHours: "Mon - Sat: 8:00 AM - 8:00 PM | Sun: 9:00 AM - 6:00 PM",
-  experienceText: "Worked with multiple companies in the Pune area"
+  experienceText: "Expert service for all types of Commercial A/C, Split A/C, Ductable A/C, VRV and more"
 };
 
 export const SERVICES = [
