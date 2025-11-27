@@ -5,11 +5,15 @@ export const CONTACT_INFO = {
   phone2: "+91 82083 46628",
   whatsapp: "917745046520", // No spaces or dashes for WhatsApp API
   email: "comforttechnicalservice8@gmail.com",
-  address: "Sr. No. 179, Flat No. 02, Nikhil Niwas, Panchtanagar, Akurdi, Pune, Maharashtra - 411035",
+  address: "Sr. No. 179, Flat No. 03, Panchatara Nagar, Akurdi, Pune, Maharashtra - 411035",
   gstin: "27HEKPS5234F1Z4",
   pan: "HEKPS5234F",
-  workingHours: "Mon - Sat: 8:00 AM - 8:00 PM | Sun: 9:00 AM - 6:00 PM",
-  experienceText: "Worked with multiple companies in the Pune area"
+  workingHours: "Open 24 Hours",
+  establishedYear: 2018,
+  experienceText: "Serving Pune since 2018 with 7+ years of experience",
+  googleMapsUrl: "https://maps.google.com/?q=Comfort+Technical+Services+Akurdi+Pune",
+  googleRating: 5.0,
+  googleReviews: 57
 };
 
 export const SERVICES = [

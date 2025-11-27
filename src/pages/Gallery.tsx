@@ -22,27 +22,39 @@ const Gallery = () => {
   const placeholderImages = [
     {
       id: "1",
-      title: "AC Installation",
-      image_url: "https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?w=800&auto=format&fit=crop",
+      title: "Split AC Installation",
+      image_url: "https://images.unsplash.com/photo-1625961332771-3f40b0e2bdcf?w=800&auto=format&fit=crop",
       description: "Professional split AC installation"
     },
     {
       id: "2",
-      title: "AC Servicing",
-      image_url: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=800&auto=format&fit=crop",
-      description: "Deep cleaning service"
+      title: "AC Deep Cleaning",
+      image_url: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&auto=format&fit=crop",
+      description: "Thorough AC deep cleaning service"
     },
     {
       id: "3",
-      title: "Technician at Work",
-      image_url: "https://images.unsplash.com/photo-1581092160607-ee67d62eabde?w=800&auto=format&fit=crop",
-      description: "Expert technician working"
+      title: "AC Repair Service",
+      image_url: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&auto=format&fit=crop",
+      description: "Expert AC repair and troubleshooting"
     },
     {
       id: "4",
-      title: "Commercial Service",
-      image_url: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&auto=format&fit=crop",
-      description: "Office AC maintenance"
+      title: "Commercial AC Service",
+      image_url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&auto=format&fit=crop",
+      description: "Office and commercial AC maintenance"
+    },
+    {
+      id: "5",
+      title: "AC Gas Refilling",
+      image_url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop",
+      description: "Professional gas refilling service"
+    },
+    {
+      id: "6",
+      title: "Refrigerator Repair",
+      image_url: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&auto=format&fit=crop",
+      description: "Fridge repair and maintenance"
     }
   ];
 
