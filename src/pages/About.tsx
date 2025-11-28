@@ -1,4 +1,4 @@
-import { Users, Award, Clock, ThumbsUp, Building2, FileText, Shield } from "lucide-react";
+import { Users, Award, Clock, ThumbsUp, Building2, FileText, Shield, Rocket, Target, Star, TrendingUp } from "lucide-react";
 import { CONTACT_INFO } from "@/config/contact";
 
 const About = () => {
@@ -7,6 +7,45 @@ const About = () => {
     { icon: Users, label: "AC Units Serviced", value: "10,000+" },
     { icon: ThumbsUp, label: "Google Reviews", value: "57" },
     { icon: Clock, label: "Google Rating", value: "5.0/5" }
+  ];
+
+  const milestones = [
+    {
+      year: "2018",
+      title: "Foundation",
+      description: "Started Comfort Technical Services in Pune with a vision to provide reliable AC services",
+      icon: Rocket
+    },
+    {
+      year: "2019",
+      title: "First 500 Customers",
+      description: "Reached our first 500 satisfied customers and expanded service coverage across Pune",
+      icon: Target
+    },
+    {
+      year: "2020",
+      title: "GST Registration",
+      description: "Became a registered GST business, offering professional invoices to all customers",
+      icon: FileText
+    },
+    {
+      year: "2021",
+      title: "PCMC Expansion",
+      description: "Extended services to PCMC area including Akurdi, Chinchwad, and surrounding regions",
+      icon: TrendingUp
+    },
+    {
+      year: "2023",
+      title: "10,000+ Services",
+      description: "Crossed the milestone of 10,000+ AC units serviced with 5-star customer ratings",
+      icon: Star
+    },
+    {
+      year: "2024",
+      title: "AMC Programs",
+      description: "Launched comprehensive Annual Maintenance Contract programs for homes and businesses",
+      icon: Award
+    }
   ];
 
   return (
@@ -47,6 +86,44 @@ const About = () => {
                 and companies by our dedicated support.
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Timeline */}
+        <div className="mb-16 animate-fade-in">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Journey</h2>
+          <div className="relative max-w-4xl mx-auto">
+            {/* Timeline line */}
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 transform md:-translate-x-1/2" />
+            
+            {milestones.map((milestone, index) => (
+              <div
+                key={milestone.year}
+                className={`relative flex items-center mb-8 last:mb-0 ${
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {/* Content */}
+                <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
+                  <div className="bg-card border border-border rounded-lg p-5 hover:shadow-lg transition-shadow">
+                    <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-semibold rounded-full mb-2">
+                      {milestone.year}
+                    </span>
+                    <h3 className="text-lg font-bold mb-2">{milestone.title}</h3>
+                    <p className="text-sm text-muted-foreground">{milestone.description}</p>
+                  </div>
+                </div>
+                
+                {/* Timeline dot */}
+                <div className="absolute left-4 md:left-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center transform -translate-x-1/2 border-4 border-background">
+                  <milestone.icon className="w-4 h-4 text-primary-foreground" />
+                </div>
+                
+                {/* Empty space for alternating layout */}
+                <div className="hidden md:block md:w-1/2" />
+              </div>
+            ))}
           </div>
         </div>
 
