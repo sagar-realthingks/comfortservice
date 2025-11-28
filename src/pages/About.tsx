@@ -30,18 +30,21 @@ const About = () => {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 {CONTACT_INFO.companyName} has been providing professional AC services in the Pune region
-                for several years. {CONTACT_INFO.experienceText}, delivering reliable installation,
-                maintenance, and repair services.
+                since 2018. {CONTACT_INFO.experienceText}, delivering reliable installation,
+                maintenance, and repair services with outstanding customer care.
               </p>
               <p>
-                Our team of skilled technicians is committed to providing fast, efficient, and
-                transparent service. We understand the importance of a well-functioning air conditioning
-                system for your comfort, especially in Pune's climate.
+                We place a high priority on providing outstanding customer service through prompt and 
+                dependable repairs, open communication, and affordable prices.
               </p>
               <p>
-                We take pride in building long-term relationships with our clients through quality work,
-                fair pricing, and exceptional customer service. Whether it's a residential home or a
-                commercial office, we treat every project with the same level of professionalism and care.
+                We facilitate flawless living and operational excellence; we are more than just a repair 
+                service. We want to create long-lasting connections that endure by keeping the greatest 
+                standards of professionalism, ethics, and customer care.
+              </p>
+              <p>
+                Beyond just servicing appliances, we are dedicated to improving lifestyles of individuals 
+                and companies by our dedicated support.
               </p>
             </div>
           </div>
