@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { CONTACT_INFO } from "@/config/contact";
 
@@ -17,22 +17,24 @@ export const ServiceCard = ({ name, description, startingPrice }: ServiceCardPro
   };
 
   return (
-    <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-      <CardHeader>
-        <CardTitle className="text-xl">{name}</CardTitle>
-        <CardDescription className="text-sm">{description}</CardDescription>
+    <Card className="h-full card-hover">
+      <CardHeader className="pb-2">
+        <CardTitle className="text-lg">{name}</CardTitle>
       </CardHeader>
-      <CardContent>
-        <p className="text-2xl font-bold text-primary">
+      <CardContent className="pb-3">
+        <p className="text-sm text-muted-foreground mb-3">{description}</p>
+        <p className="text-xl font-bold text-primary">
           {startingPrice}
-          {startingPrice.includes("₹") && <span className="text-sm font-normal text-muted-foreground"> onwards</span>}
+          {startingPrice.includes("₹") && (
+            <span className="text-xs font-normal text-muted-foreground ml-1">onwards</span>
+          )}
         </p>
       </CardContent>
-      <CardFooter className="gap-2">
-        <Button asChild className="flex-1">
+      <CardFooter className="gap-2 pt-0">
+        <Button asChild size="sm" className="flex-1">
           <Link to="/contact">Book Now</Link>
         </Button>
-        <Button variant="outline" size="icon" onClick={handleWhatsApp}>
+        <Button variant="outline" size="icon" className="h-8 w-8" onClick={handleWhatsApp}>
           <MessageCircle className="w-4 h-4" />
         </Button>
       </CardFooter>

@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const FAQs = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -30,21 +31,21 @@ const FAQs = () => {
     : faqs;
 
   return (
-    <div className="min-h-screen py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 animate-fade-in">
-          <h1 className="text-4xl font-bold mb-4">Frequently Asked Questions</h1>
-          <p className="text-lg text-muted-foreground">
+    <div className="min-h-screen section-padding">
+      <div className="container-narrow">
+        <div className="text-center mb-8">
+          <h1 className="mb-2">Frequently Asked Questions</h1>
+          <p className="text-muted-foreground text-sm">
             Find answers to common questions about our AC services
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-8 animate-slide-up">
+        <div className="flex flex-wrap justify-center gap-2 mb-6">
           <Button
             variant={selectedCategory === null ? "default" : "outline"}
-            onClick={() => setSelectedCategory(null)}
             size="sm"
+            onClick={() => setSelectedCategory(null)}
           >
             All
           </Button>
@@ -52,8 +53,8 @@ const FAQs = () => {
             <Button
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
-              onClick={() => setSelectedCategory(category)}
               size="sm"
+              onClick={() => setSelectedCategory(category)}
             >
               {category}
             </Button>
@@ -62,17 +63,17 @@ const FAQs = () => {
 
         {/* FAQs */}
         {isLoading ? (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">Loading FAQs...</p>
+          <div className="text-center py-8">
+            <p className="text-muted-foreground text-sm">Loading FAQs...</p>
           </div>
         ) : (
-          <Accordion type="single" collapsible className="w-full animate-fade-in">
+          <Accordion type="single" collapsible className="w-full">
             {filteredFaqs?.map((faq, index) => (
               <AccordionItem key={faq.id} value={`item-${index}`}>
-                <AccordionTrigger className="text-left">
+                <AccordionTrigger className="text-sm text-left py-3">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-sm text-muted-foreground pb-4">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -81,16 +82,14 @@ const FAQs = () => {
         )}
 
         {/* Contact Section */}
-        <div className="mt-12 bg-accent/5 rounded-lg p-8 text-center animate-fade-in">
-          <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>
-          <p className="text-muted-foreground mb-6">
+        <div className="mt-10 bg-accent rounded-lg p-6 text-center">
+          <h2 className="mb-2">Still Have Questions?</h2>
+          <p className="text-muted-foreground text-sm mb-4">
             Can't find the answer you're looking for? Contact us directly and we'll be happy to help.
           </p>
-          <div className="flex justify-center gap-4">
-            <Button asChild>
-              <a href="/contact">Contact Us</a>
-            </Button>
-          </div>
+          <Button asChild>
+            <Link to="/contact">Contact Us</Link>
+          </Button>
         </div>
       </div>
     </div>

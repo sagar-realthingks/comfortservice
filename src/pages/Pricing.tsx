@@ -40,39 +40,40 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 animate-fade-in">
-          <h1 className="text-4xl font-bold mb-4">Transparent Pricing</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+    <div className="min-h-screen section-padding">
+      <div className="container-wide">
+        <div className="text-center mb-8">
+          <h1 className="mb-2">Transparent Pricing</h1>
+          <p className="text-muted-foreground max-w-xl mx-auto text-sm">
             Clear, upfront pricing with no hidden charges. Final price confirmed after inspection.
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-4">
           {pricingData.map((category, index) => (
-            <Card key={index} className="animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-              <CardHeader>
-                <CardTitle>{category.category}</CardTitle>
-                <CardDescription>Professional service with warranty included</CardDescription>
+            <Card key={index}>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">{category.category}</CardTitle>
+                <CardDescription className="text-xs">Professional service with warranty included</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
+                <div className="divide-y divide-border">
                   {category.items.map((item, idx) => (
-                    <div key={idx} className="flex items-center justify-between py-3 border-b border-border last:border-0">
-                      <span className="font-medium">{item.name}</span>
-                      <div className="flex items-center gap-3">
-                        <span className="text-primary font-bold">{item.price}</span>
-                        <div className="flex gap-2">
-                          <Button asChild size="sm" variant="outline">
+                    <div key={idx} className="flex items-center justify-between py-3 first:pt-0 last:pb-0">
+                      <span className="text-sm font-medium">{item.name}</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-primary font-semibold text-sm">{item.price}</span>
+                        <div className="flex gap-1">
+                          <Button asChild size="sm" variant="outline" className="h-7 px-2 text-xs">
                             <Link to="/contact">Book</Link>
                           </Button>
                           <Button
                             size="sm"
                             variant="ghost"
+                            className="h-7 w-7 p-0"
                             onClick={() => handleWhatsApp(item.name)}
                           >
-                            <MessageCircle className="w-4 h-4" />
+                            <MessageCircle className="w-3.5 h-3.5" />
                           </Button>
                         </div>
                       </div>
@@ -84,10 +85,10 @@ const Pricing = () => {
           ))}
         </div>
 
-        <div className="mt-12 grid md:grid-cols-2 gap-8">
-          <div className="bg-accent/5 rounded-lg p-8 animate-fade-in">
-            <h2 className="text-2xl font-bold mb-4">Pricing Notes</h2>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+        <div className="mt-8 grid md:grid-cols-2 gap-4">
+          <div className="bg-accent rounded-lg p-5">
+            <h3 className="font-semibold mb-3">Pricing Notes</h3>
+            <ul className="space-y-1.5 text-xs text-muted-foreground">
               <li>• Prices may vary based on AC condition, location, and accessibility</li>
               <li>• Parts and materials are charged separately if needed</li>
               <li>• Free inspection for all services</li>
@@ -96,12 +97,12 @@ const Pricing = () => {
               <li>• AMC customers get priority support and discounted rates</li>
             </ul>
           </div>
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-8 animate-fade-in">
-            <h2 className="text-2xl font-bold mb-4 text-primary">GST Invoice Available</h2>
-            <p className="text-sm text-muted-foreground mb-4">
+          <div className="bg-primary/5 border border-primary/20 rounded-lg p-5">
+            <h3 className="font-semibold mb-3 text-primary">GST Invoice Available</h3>
+            <p className="text-xs text-muted-foreground mb-3">
               We are a GST registered business and provide proper GST invoices for all services.
             </p>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <ul className="space-y-1.5 text-xs text-muted-foreground">
               <li>• Official GST invoices for all transactions</li>
               <li>• Claim input tax credit on business expenses</li>
               <li>• Proper documentation for corporate clients</li>

@@ -32,52 +32,51 @@ const AMC = () => {
   ];
 
   return (
-    <div className="min-h-screen py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 animate-fade-in">
-          <h1 className="text-4xl font-bold mb-4">Annual Maintenance Plans</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+    <div className="min-h-screen section-padding">
+      <div className="container-wide">
+        <div className="text-center mb-8">
+          <h1 className="mb-2">Annual Maintenance Plans</h1>
+          <p className="text-muted-foreground max-w-xl mx-auto text-sm">
             Keep your AC running efficiently year-round with our comprehensive AMC plans.
             Save money on repairs and enjoy priority support.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
           {AMC_PLANS.map((plan, index) => (
             <Card
               key={index}
-              className={`animate-slide-up ${plan.popular ? "border-primary shadow-lg scale-105" : ""}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`card-hover ${plan.popular ? "border-primary shadow-md ring-1 ring-primary/20" : ""}`}
             >
               {plan.popular && (
-                <div className="bg-primary text-primary-foreground text-center py-2 text-sm font-semibold rounded-t-lg">
+                <div className="bg-primary text-primary-foreground text-center py-1.5 text-xs font-medium">
                   Most Popular
                 </div>
               )}
-              <CardHeader>
-                <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                <CardDescription>{plan.subtitle}</CardDescription>
-                <div className="mt-4">
-                  <span className="text-3xl font-bold text-primary">{plan.price}</span>
-                  <span className="text-muted-foreground">{plan.duration}</span>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">{plan.name}</CardTitle>
+                <CardDescription className="text-xs">{plan.subtitle}</CardDescription>
+                <div className="mt-3">
+                  <span className="text-2xl font-bold text-primary">{plan.price}</span>
+                  <span className="text-muted-foreground text-sm">{plan.duration}</span>
                 </div>
-                <p className="text-sm text-muted-foreground mt-2">{plan.visits}</p>
+                <p className="text-xs text-muted-foreground mt-1">{plan.visits}</p>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
+              <CardContent className="pb-3">
+                <ul className="space-y-2">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
+                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-xs">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
-              <CardFooter className="flex gap-2">
-                <Button asChild className="flex-1">
+              <CardFooter className="flex gap-2 pt-0">
+                <Button asChild size="sm" className="flex-1">
                   <Link to="/contact">Enquire Now</Link>
                 </Button>
-                <Button variant="outline" size="icon" onClick={() => handleWhatsApp(plan.name)}>
+                <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => handleWhatsApp(plan.name)}>
                   <MessageCircle className="w-4 h-4" />
                 </Button>
               </CardFooter>
@@ -85,29 +84,29 @@ const AMC = () => {
           ))}
         </div>
 
-        <div className="bg-accent/5 rounded-lg p-8 mb-12 animate-fade-in">
-          <h2 className="text-2xl font-bold mb-4">AMC Benefits</h2>
-          <div className="grid md:grid-cols-2 gap-4 text-sm">
+        <div className="bg-accent rounded-lg p-5 mb-8">
+          <h2 className="mb-4">AMC Benefits</h2>
+          <div className="grid md:grid-cols-2 gap-3">
             <ul className="space-y-2">
-              <li className="flex gap-2"><Check className="w-5 h-5 text-primary" /> Regular preventive maintenance</li>
-              <li className="flex gap-2"><Check className="w-5 h-5 text-primary" /> Priority scheduling for service calls</li>
-              <li className="flex gap-2"><Check className="w-5 h-5 text-primary" /> Reduced breakdown frequency</li>
+              <li className="flex gap-2 text-sm"><Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" /> Regular preventive maintenance</li>
+              <li className="flex gap-2 text-sm"><Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" /> Priority scheduling for service calls</li>
+              <li className="flex gap-2 text-sm"><Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" /> Reduced breakdown frequency</li>
             </ul>
             <ul className="space-y-2">
-              <li className="flex gap-2"><Check className="w-5 h-5 text-primary" /> Extended AC equipment life</li>
-              <li className="flex gap-2"><Check className="w-5 h-5 text-primary" /> Discounted repair rates</li>
-              <li className="flex gap-2"><Check className="w-5 h-5 text-primary" /> Dedicated support team</li>
+              <li className="flex gap-2 text-sm"><Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" /> Extended AC equipment life</li>
+              <li className="flex gap-2 text-sm"><Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" /> Discounted repair rates</li>
+              <li className="flex gap-2 text-sm"><Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" /> Dedicated support team</li>
             </ul>
           </div>
         </div>
 
-        <div className="animate-fade-in">
-          <h2 className="text-2xl font-bold mb-6">AMC FAQs</h2>
+        <div>
+          <h2 className="mb-4">AMC FAQs</h2>
           <Accordion type="single" collapsible className="w-full">
             {amcFaqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger>{faq.q}</AccordionTrigger>
-                <AccordionContent>{faq.a}</AccordionContent>
+                <AccordionTrigger className="text-sm text-left">{faq.q}</AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">{faq.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
