@@ -34,19 +34,20 @@ const ServiceAreas = () => {
   };
 
   return (
-    <div className="min-h-screen py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 animate-fade-in">
-          <h1 className="text-4xl font-bold mb-4">Service Areas</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+    <div className="min-h-screen section-padding">
+      <div className="container-wide">
+        <div className="text-center mb-8">
+          <h1 className="mb-2">Service Areas</h1>
+          <p className="text-muted-foreground max-w-xl mx-auto text-sm">
             We proudly serve homes and businesses across Pune and Pimpri Chinchwad.
           </p>
         </div>
 
         {/* City Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-8 animate-slide-up">
+        <div className="flex flex-wrap justify-center gap-2 mb-6">
           <Button
             variant={selectedCity === null ? "default" : "outline"}
+            size="sm"
             onClick={() => setSelectedCity(null)}
           >
             All Areas
@@ -55,6 +56,7 @@ const ServiceAreas = () => {
             <Button
               key={city}
               variant={selectedCity === city ? "default" : "outline"}
+              size="sm"
               onClick={() => setSelectedCity(city)}
             >
               {city}
@@ -64,13 +66,13 @@ const ServiceAreas = () => {
 
         {/* Areas List */}
         {isLoading ? (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">Loading service areas...</p>
+          <div className="text-center py-8">
+            <p className="text-muted-foreground text-sm">Loading service areas...</p>
           </div>
         ) : (
-          <div className="flex flex-wrap gap-2 justify-center animate-fade-in">
+          <div className="flex flex-wrap gap-2 justify-center">
             {filteredAreas?.map((area) => (
-              <Badge key={area.id} variant="secondary" className="px-4 py-2 text-sm">
+              <Badge key={area.id} variant="secondary" className="px-3 py-1.5 text-xs">
                 {area.area_name}
               </Badge>
             ))}
@@ -78,19 +80,19 @@ const ServiceAreas = () => {
         )}
 
         {/* Not Listed Section */}
-        <div className="mt-12 bg-accent/5 rounded-lg p-8 text-center animate-fade-in">
-          <h2 className="text-2xl font-bold mb-4">Don't See Your Area?</h2>
-          <p className="text-muted-foreground mb-6">
+        <div className="mt-10 bg-accent rounded-lg p-6 text-center">
+          <h2 className="mb-2">Don't See Your Area?</h2>
+          <p className="text-muted-foreground text-sm mb-4">
             We're constantly expanding our service coverage. Contact us on WhatsApp to check if we can serve your location.
           </p>
           <Button onClick={handleWhatsApp} className="gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white">
-            <MessageCircle className="w-5 h-5" />
-            Check Availability on WhatsApp
+            <MessageCircle className="w-4 h-4" />
+            Check Availability
           </Button>
         </div>
 
         {/* Coverage Note */}
-        <div className="mt-8 text-center text-sm text-muted-foreground animate-fade-in">
+        <div className="mt-6 text-center text-xs text-muted-foreground">
           <p>
             <strong>Note:</strong> We also provide services to nearby areas not listed above.
             Contact us for confirmation.

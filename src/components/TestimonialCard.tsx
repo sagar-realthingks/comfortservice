@@ -11,19 +11,19 @@ interface TestimonialCardProps {
 export const TestimonialCard = ({ name, rating, review, city }: TestimonialCardProps) => {
   return (
     <Card className="h-full">
-      <CardContent className="pt-6">
-        <div className="flex gap-1 mb-3">
+      <CardContent className="pt-5 pb-4">
+        <div className="flex gap-0.5 mb-2">
           {Array.from({ length: 5 }).map((_, i) => (
             <Star
               key={i}
-              className={`w-4 h-4 ${i < rating ? "fill-yellow-400 text-yellow-400" : "text-muted"}`}
+              className={`w-4 h-4 ${i < rating ? "fill-amber-400 text-amber-400" : "text-muted"}`}
             />
           ))}
         </div>
-        <p className="text-sm mb-4 text-foreground/90">{review}</p>
+        <p className="text-sm text-foreground/90 mb-3 leading-relaxed">{review}</p>
         <div className="text-sm">
-          <p className="font-semibold">{name}</p>
-          {city && <p className="text-muted-foreground">{city}</p>}
+          <p className="font-medium">{name}</p>
+          {city && <p className="text-xs text-muted-foreground">{city}</p>}
         </div>
       </CardContent>
     </Card>
